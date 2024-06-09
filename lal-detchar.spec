@@ -6,7 +6,7 @@ Summary:	LAL routines for detector chracterisation
 Summary(pl.UTF-8):	Procedury LAL do charakterystyki detektorów
 Name:		lal-detchar
 Version:	0.3.5
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.igwn.org/lscsoft/source/lalsuite/laldetchar-%{version}.tar.xz
@@ -15,6 +15,7 @@ Patch0:		%{name}-env.patch
 Patch1:		lal-metaio-detect.patch
 Patch2:		%{name}-lal-swig.patch
 Patch3:		%{name}-octave.patch
+Patch4:		%{name}-update.patch
 URL:		https://wiki.ligo.org/Computing/LALSuite
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -126,6 +127,7 @@ Wiązania Pythona do biblioteki LAL DetChar.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 %{__libtoolize}

@@ -1,0 +1,59 @@
+--- laldetchar-0.3.5/src/LALDetCharGlibTypes.c.orig	2015-03-27 05:14:39.000000000 +0100
++++ laldetchar-0.3.5/src/LALDetCharGlibTypes.c	2024-06-09 18:14:14.613745159 +0200
+@@ -20,6 +20,7 @@
+ #include <lal/LALDetCharGlibTypes.h>
+ #include <lal/XLALError.h>
+ #include <lal/LALString.h>
++#include <lal/LIGOMetadataUtils.h>
+ #include <lal/SnglBurstUtils.h>
+ 
+ #ifdef __GNUC__
+--- laldetchar-0.3.5/gnuscripts/lalsuite_gccflags.m4.orig	2016-09-13 16:51:01.000000000 +0200
++++ laldetchar-0.3.5/gnuscripts/lalsuite_gccflags.m4	2024-06-09 18:28:19.515834598 +0200
+@@ -30,7 +30,6 @@ AC_DEFUN([LALSUITE_ADD_GCC_FLAGS],[
+       -g3
+       -Wall
+       -W
+-      -Werror
+       -Wmissing-prototypes
+       -Wstrict-prototypes
+       -Wshadow
+--- laldetchar-0.3.5/src/LALDetCharHveto.c.orig	2015-06-25 19:00:24.000000000 +0200
++++ laldetchar-0.3.5/src/LALDetCharHveto.c	2024-06-09 18:34:44.637081550 +0200
+@@ -1,4 +1,5 @@
+ #include <lal/LALDetCharHveto.h>
++#include <lal/Date.h>
+ 
+ /*
+  * Okay, now we're playing a bit fast and loose. These are defined for use with
+--- laldetchar-0.3.5/src/LALDetCharHvetoUtils.h.orig	2015-07-30 18:28:46.000000000 +0200
++++ laldetchar-0.3.5/src/LALDetCharHvetoUtils.h	2024-06-09 18:37:25.132878737 +0200
+@@ -23,7 +23,6 @@
+ #include <lal/LALDetCharGlibTypes.h>
+ #include <lal/LIGOMetadataTables.h>
+ #include <lal/SnglBurstUtils.h>
+-#include <lal/LIGOLwXMLBurstRead.h>
+ 
+ #ifdef  __cplusplus
+ extern "C" {
+--- laldetchar-0.3.5/src/LALDetCharHveto.h.orig	2015-03-27 05:14:39.000000000 +0100
++++ laldetchar-0.3.5/src/LALDetCharHveto.h	2024-06-09 18:38:08.295978235 +0200
+@@ -27,7 +27,6 @@
+ 
+ #include <lal/LALString.h>
+ #include <lal/LALDetCharGlibTypes.h>
+-#include <lal/LIGOLwXMLBurstRead.h>
+ #include <lal/LIGOMetadataTables.h>
+ #include <lal/SnglBurstUtils.h>
+ 
+--- laldetchar-0.3.5/src/LALDetCharHvetoUtils.c.orig	2015-03-27 05:14:39.000000000 +0100
++++ laldetchar-0.3.5/src/LALDetCharHvetoUtils.c	2024-06-09 18:50:45.818541050 +0200
+@@ -20,6 +20,8 @@
+ #include <lal/LALDetCharHvetoUtils.h>
+ #include <lal/LALString.h>
+ #include <lal/LALDetCharGlib.h>
++#include <lal/LIGOLwXMLRead.h>
++#include <lal/LIGOMetadataUtils.h>
+ 
+ #ifdef __GNUC__
+ #define UNUSED __attribute__ ((unused))
