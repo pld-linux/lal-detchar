@@ -6,7 +6,7 @@ Summary:	LAL routines for detector chracterisation
 Summary(pl.UTF-8):	Procedury LAL do charakterystyki detektorów
 Name:		lal-detchar
 Version:	0.3.5
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://software.igwn.org/lscsoft/source/lalsuite/laldetchar-%{version}.tar.xz
@@ -107,8 +107,8 @@ Requires:	python-lalburst >= 1.4.4
 Requires:	python-lalmetaio >= 1.3.1
 Requires:	python-lalsimulation >= 1.7.0
 Requires:	python-lscsoft-glue
-Requires:	python-modules >= 1:2.6
 Requires:	python-matplotlib
+Requires:	python-modules >= 1:2.6
 Requires:	python-numpy >= 1:1.7
 Requires:	python-pygobject >= 2.0
 Requires:	python-pygtk-gtk >= 2:2.0
@@ -123,11 +123,11 @@ Wiązania Pythona do biblioteki LAL DetChar.
 
 %prep
 %setup -q -n laldetchar-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
+%patch -P 0 -p1
+%patch -P 1 -p1
+%patch -P 2 -p1
+%patch -P 3 -p1
+%patch -P 4 -p1
 
 %build
 %{__libtoolize}
